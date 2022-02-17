@@ -1,0 +1,230 @@
+/* CSS RESET */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-neutral-light: #eee;
+  --color-neutral-medium: #999;
+  --color-neutral-dark: #555;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --header-height: 3rem;
+  --spacing: 1rem;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 100%;
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+}
+a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* LAYOUT CLASSES */
+
+.container {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.display-inline-flex {
+  display: inline-flex;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+.flex-stretch {
+  flex: 1 1 auto;
+}
+.flex-none {
+  flex: none;
+}
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+/* COMPONENT CLASSES */
+
+.nav ul {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.navbar {
+  background-color: var(--color-neutral-dark);
+  color: var(--color-white);
+  line-height: var(--header-height);
+  overflow: hidden;
+}
+
+.navbar h1 {
+  font-size: 1em;
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+.navbar a {
+  padding: 0 0.5em;
+  float: left;
+  display: block;
+  text-decoration: none;
+}
+.navbar a:hover {
+  background-color: var(--color-white);
+  color: black;
+}
+/* CARD */
+
+.card {
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+  padding: 1em;
+  overflow: hidden;
+  position: relative;
+}
+.card.soft {
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+}
+.card.hard {
+  border-radius: 0.2em;
+  border: 2px solid var(--color-neutral-medium);
+}
+.card.dark {
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-medium);
+}
+.card.medium {
+  background-color: var(--color-neutral-medium);
+}
+.card.medium {
+  padding: 0;
+}
+
+/* VIEWWINDOW */
+
+.view-window {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* HERO IMAGE */
+/* The hero image */
+.hero-image img {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* position: relative; */
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../../img/sunset.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(80%);
+}
+.hero-content {
+  position: relative;
+  font-family: "Monserrat", sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0.625rem;
+}
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
+.hero-button {
+  background-color: #ae2d59;
+  color: white;
+  border: 1px solid #cb376a;
+  margin-top: 5rem;
+  padding: 0.9375rem 1.875rem;
+  font-family: "Monserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+.hero-button:hover {
+  background-color: #cb376a;
+  border: 1px solid #db7598;
+}
